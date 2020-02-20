@@ -11,7 +11,7 @@ from telegram.utils.request import Request
 
 
 button_help = 'Помощь'
-
+TOKEN = ''
 
 def log_error(f):
     def inner(*args, **kwargs):
@@ -59,7 +59,7 @@ def main():
     )
     bot = Bot(
         request=req,
-        token='1078809721:AAGHvwEiWVgHO8M9Q2N2SC_DyPqXo-pUaQ0',
+        token='TOKEN',
         base_url='https://telegg.ru/orig/bot',
     )
 

@@ -4,7 +4,7 @@ import time
 running = True
 
 URL1 = 'https://html.mineto.site/index.php?page=api&action=getuserstatus&api_key'
-URL2 = '=eeff1882ccb9df2b21d62a6a90818a9977d38a1065c508d9aee8005de3be77ea&id=2'
+URL2 = ''
 URL = URL1 + URL2
 min_hashrate = 7000000.00
 

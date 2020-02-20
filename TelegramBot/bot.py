@@ -5,7 +5,7 @@ from mysql.connector import errorcode
 import os
 
 
-token = '1078809721:AAGHvwEiWVgHO8M9Q2N2SC_DyPqXo-pUaQ0'
+token = ''
 bot = telebot.TeleBot(token)
 
 

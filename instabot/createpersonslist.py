@@ -1,9 +1,10 @@
 from selenium import webdriver
 import time
 
-login = input('Введите свой логин: ')
-passwd = input('Введите свой пароль: ')
-all = 100
+login = input("Введите логин: ")
+passwd = input("Введите пароль: ")
+target_group = "https://www.instagram.com/smkventilyatcia/"
+all = 500
 
 browser = webdriver.Chrome(r"/home/viktor_/PycharmProjects/MyProjects/instabot/chromedriver")
 browser.get("https://www.instagram.com/")
@@ -15,10 +16,9 @@ browser.find_element_by_xpath('//section/main/div/article/div/div[1]/div/form/di
 browser.find_element_by_xpath('//section/main/div/article/div/div[1]/div/form/div[3]/div/label/input').send_keys(passwd)
 browser.find_element_by_xpath('//section/main/div/article/div/div[1]/div/form/div[4]').click()
 time.sleep(3)
-input("Подтвердите код и нажмите любую клавишу")
+# input("Подтвердите код и нажмите любую клавишу")
 
 # действия на сайте
-target_group = "https://www.instagram.com/natgeo/"
 browser.get(target_group)
 time.sleep(1)
 but_folowwers = '//section/main/div/header/section/ul/li[2]/a'
