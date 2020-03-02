@@ -15,10 +15,10 @@ browser = webdriver.Chrome("/home/viktor_/PycharmProjects/MyProjects/instabot/ch
 
 # ПАРАМЕТРЫ
 like_time = 10  # время между каждым лайком
-all_likes = 1000  # за сутки
-all_subscriptions = 500  # за сутки
-hour_like = 50  # максимальное число лайков за час
-hour_sub = 25  # максимальное число подписок за час
+all_likes = 500  # за сутки
+all_subscriptions = 250  # за сутки
+hour_like = 30  # максимальное число лайков за час
+hour_sub = 30  # максимальное число подписок за час
 
 
 # в этом часу уже есть
@@ -46,8 +46,8 @@ time.sleep(3)
 # input("Подтвердите код и нажмите любую клавишу")
 
 # считывание файла отфильтрованных пользователей
+file_list = []
 with open("filtered_persons_list.txt", "r") as f:
-    file_list = []
     for line in f:
         file_list.append(line)
 
@@ -156,7 +156,7 @@ for person in file_list:
     rand_post = random.randint(0, 5)  # случайный 1-5 пост
     for i in range(2):
         browser.get(posts[rand_post + i])
-        time.sleep(0.3)
+        time.sleep(2)
         browser.find_element_by_xpath("//section/main/div/div/article/div[2]/section[1]/span[1]/button").click()
         likes += 1
         print("+1 лайк")
@@ -169,6 +169,7 @@ for person in file_list:
             print(j, "Ошибка, код ошибки: 2.0")
         try:
             browser.find_element_by_xpath(element).click()
+            time.sleep(3)
         except StaleElementReferenceException:
             print(j, "Ошибка, код ошибки: 2.1")
             continue
@@ -178,7 +179,7 @@ for person in file_list:
 
     subsciptions += 1
     print("+1 Подписка", person[0:len(person)-1])
-    time.sleep(0.5)
+    time.sleep(2.5)
 
     # запись новой подписки в файл подписок
     with open("my_subscriptions.txt", "a") as f:
